@@ -1,4 +1,4 @@
-# 🏺 SSBM Textures Archive
+# SSBM Textures
 
 Web platform for Super Smash Bros. Melee texture modifications. Built to organize, index, and preserve community-created assets.
 
