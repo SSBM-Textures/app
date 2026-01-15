@@ -25,6 +25,7 @@ bunx convex dev
 
 # Start the Svelte 5 dev server
 bun run dev
+```
 
 ## Editor Configuration
 
