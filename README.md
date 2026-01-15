@@ -1,38 +1,65 @@
-# sv
+# 🏺 SSBM Textures Archive
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Web platform for Super Smash Bros. Melee texture modifications. Built to organize, index, and preserve community-created assets.
 
-## Creating a project
+## Tech Stack
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **Frontend:** [Svelte 5](https://svelte.dev) (Runes, Bits UI, Lucide)
+- **Backend:** [Convex](https://convex.dev) (Real-time Database & File Storage)
+- **Runtime:** [Bun](https://bun.sh)
+- **Styling:** [UnoCSS](https://unocss.dev)
+- **Tooling:** [Biome](https://biomejs.dev) (Linting/Formatting), [Runed](https://runed.dev)
 
-```sh
-# create a new project in the current directory
-npx sv create
+## Development Setup
 
-# create a new project in my-app
-npx sv create my-app
+### Prerequisites
+- **[Bun](https://bun.com/)** 
+
+### Installation
+```bash
+# Install dependencies
+bun install
+
+# Start the Convex backend
+bunx convex dev
+
+# Start the Svelte 5 dev server
+bun run dev
+
+## Editor Configuration
+
+To ensure consistent formatting and Svelte 5 Rune support across our team, please configure your editor as follows.
+
+### Visual Studio Code
+1. Required Extensions:
+   - [Svelte for VS Code](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) (Ensure v5+ for Rune support)
+   - [Biome](https://marketplace.visualstudio.com/items?itemName=biomejs.biome) (Enforced formatter/linter)
+   - [Convex](https://marketplace.visualstudio.com/items?itemName=convex.convex) (Backend integration)
+
+2. Workspace Settings (`.vscode/settings.json`):
+```json
+{
+  "editor.defaultFormatter": "biomejs.biome",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports.biome": "explicit",
+    "source.fixAll.biome": "explicit"
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "svelte.plugin.svelte.compilerWarnings": {
+    "runes_scope": "ignore"
+  }
+}
 ```
 
-## Developing
+### Neovim
+* **[nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)** – Enables the `svelte-language-server` and `biome` LSP for real-time linting and logic checking.
+* **[conform.nvim](https://github.com/stevearc/conform.nvim)** – Orchestrates auto-formatting on save using Biome (enforces project-wide code style).
+* **[nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)** – Provides high-fidelity syntax highlighting for Svelte 5 **Runes** (`$state`, `$derived`, etc.).
+* **[mason.nvim](https://github.com/mason-org/mason.nvim)** - Easily install and manage LSP servers, DAP servers, linters, and formatters.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+#### **Required Parsers**
+```vim
+:TSInstall svelte typescript javascript css json

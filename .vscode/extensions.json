@@ -1,0 +1,9 @@
+{
+	"recommendations": [
+		"svelte.svelte-vscode",
+		"biomejs.biome",
+		"convex.convex",
+		"unocss.unocss",
+		"lucide.lucide-icons"
+	]
+}
