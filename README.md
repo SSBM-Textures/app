@@ -60,7 +60,11 @@ To ensure consistent formatting and Svelte 5 Rune support across our team, pleas
 * **[conform.nvim](https://github.com/stevearc/conform.nvim)** – Orchestrates auto-formatting on save using Biome (enforces project-wide code style).
 * **[nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)** – Provides high-fidelity syntax highlighting for Svelte 5 **Runes** (`$state`, `$derived`, etc.).
 * **[mason.nvim](https://github.com/mason-org/mason.nvim)** - Easily install and manage LSP servers, DAP servers, linters, and formatters.
+* **[nvim-svelte-check](https://github.com/nvim-svelte/nvim-svelte-check)** Get svelte-check in quick-fix
+* **[nvim-svelte-snippets](https://github.com/nvim-svelte/nvim-svelte-snippets)**
+* **[ts-error-translator](https://github.com/dmmulroy/ts-error-translator.nvim)** converts cryptic errors
 
 #### **Required Parsers**
+
 ```vim
 :TSInstall svelte typescript javascript css json
